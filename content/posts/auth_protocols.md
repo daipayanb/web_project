@@ -105,7 +105,7 @@ OpenID Connect and OAuth 2.0 together solved this problem.
   * Access Token: This will be used as a key when the Client makes requests to the Resource Server API. This key denotes that the user has necessary permission to perform the actions.
 
 **OAuth 2.0 Flow:**
-1. The Resource Owner(i.e. You) want the Client(FIFA 20) to access your Resource Server(Reddit account) and post the final scoreboard to several Subreddits.
+1. The Resource Owner(i.e. You) want the Client(FIFA 20) to access your Resource Server(Twitter account) and post the final scoreboard to several Subreddits.
 2. The Client spawns a browser and redirects to the Authorization Server page with a URL consisting of the Client ID, Redirect URL, Response Type and the Scope.
 3. If you do not have an active session the Authorization Server may ask you to login and verify who you are.
 4. The Authorization Server prompts you for your Consent along with the requested Scopes by the Client, which you can approve or deny.
