@@ -1,8 +1,4 @@
----
-title: "Auth_protocols"
-date: 2020-05-27T20:56:26-04:00
-draft: true
----
+
 # THIS NOT THE FINAL VERSION  
 Hello everyone. As a security enthusiast who is still learning, I find a lot of the technologies which act as the backbone of Security tend to be ignored. I found my knowledge to be lacking in multiple areas and decided to start with "auth" protocols. This post is just to collect my understandings and may contain inaccuracies.
 
