@@ -1,4 +1,7 @@
-
+---
+title: "My First Post"
+date: 2020-05-28T13:44:54-04:00
+---
 # THIS NOT THE FINAL VERSION  
 Hello everyone. As a security enthusiast who is still learning, I find a lot of the technologies which act as the backbone of Security tend to be ignored. I found my knowledge to be lacking in multiple areas and decided to start with "auth" protocols. This post is just to collect my understandings and may contain inaccuracies.
 
