@@ -1,5 +1,5 @@
 ---
-title: "My First Post"
+title: "My Understanding of Authentication Protocols"
 date: 2020-05-28T13:44:54-04:00
 ---
 # THIS NOT THE FINAL VERSION  
