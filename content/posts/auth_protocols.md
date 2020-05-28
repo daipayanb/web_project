@@ -4,7 +4,7 @@ date: 2020-05-27T20:56:26-04:00
 draft: true
 ---
 # THIS NOT THE FINAL VERSION  
-Hello everyone. As a security enthusiast who is still learning, a lot of the technologies which act as the backbone of Security tend to be ignored. I found my knowledge to be lacking in multiple areas and decided to start with "auth" protocols.
+Hello everyone. As a security enthusiast who is still learning, I find a lot of the technologies which act as the backbone of Security tend to be ignored. I found my knowledge to be lacking in multiple areas and decided to start with "auth" protocols. This post is just to collect my understandings and may contain inaccuracies.
 
 ### **What is an auth protocol?**
 
@@ -15,7 +15,7 @@ Simplifying Wikipedia’s definition of an Auth Protocol. Authentication protoco
 Initially it was just authentication protocols but soon protocols were able to handle authorization as well. Some protocols are able to handle Accounting as well.
 
 
-## **Auth Protocols in the Enterprise World**
+## **Authentication Protocols in the Enterprise World**
 
 While studying for my Security+ certification I learnt about some of the Authentication Protocols. Some of the common ones are:
 
@@ -25,7 +25,7 @@ While studying for my Security+ certification I learnt about some of the Authent
 
 **RADIUS(Remote Authentication Dial-In User Service):** RADIUS is a AAA protocol which uses a client/server model. It uses a network access server(NAS), which accepts users’ requests. It then forwards them to the RADIUS server with the user’s details.
 
-**LDAP(Lightweight Directory Access Protocol):** itself is not an Auth protocol but can be thought of as a language which helps programs and applications(on different platforms) communicate with Directory Service(Active Directory for example) Servers for information such as users, passwords and other computing resources.
+**LDAP(Lightweight Directory Access Protocol):** LDAP itself is not an Auth protocol but can be thought of as a language which helps programs and applications(on different platforms) communicate with Directory Service(Active Directory for example) Servers for information such as users, passwords and other computing resources.
 + An LDAP client is just a system or application with LDAP login enabled while an LDAP server provides a centralized user database, where a user can authenticate itself using a password to access network resources.
 + The aforementioned Directory Services servers are a type of network database which have a flexible schema. Active Directory is one of them
 + LDAP can also be configured to handle authorization as well. As it checks if the user has the authority to access that resource.
@@ -46,7 +46,7 @@ While studying for my Security+ certification I learnt about some of the Authent
     5. The TGS responds with a session key for the service.
     6. The client forwards the session key to the service that the user wants to access.
 
-## **Authentication in the Web Services World**
+## **Authentication Protocols in the Web Services World**
 
 **SAML(Security Assertion Markup Language):** is based on XML and works as a protocol for a user to authenticate to the web servers. SAML allows for Single-Sign-On which is one of it’s  most common use cases. 
 SAML has two very important components:
@@ -85,16 +85,16 @@ The problem from the service’s end is management of such credentials is extrem
  
 OpenID Connect and OAuth 2.0 together solved this problem.
  
-## OAuth 2.0
+## **OAuth 2.0**
  
 **OAuth 2.0:** It is an open-standard authorization protocol where a user can authorize an application to access their information from another application or service. 
 + OAuth 2.0 is the technology that lets you allow your favorite video game(e.g. FIFA20) to post your accomplishments on the social network(e.g. Twitter) of your choice without you having to share your social network credentials with the game’s software.
-+ For understanding the flow we would follow our previous example where you would like to share a picture of the final scoreboard from FIFA20 with your favorite FIFA and other gaming subreddits. 
++ For understanding the flow we would follow our previous example where you would like to share a picture of the final scoreboard from FIFA20 on your Twitter feed. 
 + Before we can get into OAuth’s flow there are few components that we need to understand.
 + OAuth defines four roles:
   1. Resource Owner: Is the user. User owns the Identity and is responsible for authorizing an application to access their account.
   2. Client: The application(e.g. FIFA20) that wants to access your account(e.g. Twitter) and perform actions on behalf of the resource owner. 
-  3. Authorization Server: The server(Reddit’s authorization server) that verifies the identity of the Resource Owner 
+  3. Authorization Server: The server(Twitter’s authorization server) that verifies the identity of the Resource Owner 
   4. Resource Server: The Application Programming Interface(API) or service the client wants to access.
 + Important OAuth Terminology:
   * Redirect URL: The URL that the Authorization Server redirects the Resource Owner to, once they grant permissions to the Client. This is usually defined during the Application Registration.
@@ -105,7 +105,7 @@ OpenID Connect and OAuth 2.0 together solved this problem.
   * Access Token: This will be used as a key when the Client makes requests to the Resource Server API. This key denotes that the user has necessary permission to perform the actions.
 
 **OAuth 2.0 Flow:**
-1. The Resource Owner(i.e. You) want the Client(FIFA 20) to access your Resource Server(Twitter account) and post the final scoreboard to several Subreddits.
+1. The Resource Owner(i.e. You) want the Client(FIFA 20) to access your Resource Server(Twitter account) and post the final scoreboard to your feed.
 2. The Client spawns a browser and redirects to the Authorization Server page with a URL consisting of the Client ID, Redirect URL, Response Type and the Scope.
 3. If you do not have an active session the Authorization Server may ask you to login and verify who you are.
 4. The Authorization Server prompts you for your Consent along with the requested Scopes by the Client, which you can approve or deny.
@@ -124,7 +124,7 @@ Some other OAuth flow types:
 
 Any of the above OAuth 2.0 flows can be implemented depending on the use case of the application.
 
-## OpenID Connect
+## **OpenID Connect**
 
 + We have now seen that OAuth takes care of Authorization but Authentication? That can be taken care of by the OpenID Connect(OIDC).
 + OpenID Connect is a layer above OAuth which handles the authentication of the user and maintains the identities of the users. It also maintains information regarding users who have already established a session.
