@@ -1,5 +1,4 @@
 ---
-title: "About Daipayan Banerjee"
 date: 2020-06-03T13:44:54-04:00
 ---
 
@@ -26,3 +25,8 @@ Bachelor of Engineering in Computer Engineering from Maharashtra Institute of Te
 #### Certifications:
 - Comptia Security+
 - Penetration Testing with Kali ongoing. OSCP attempt in August 2020.
+
+#### Work Experience:
+- Associate Development Associate at Accenture Solutions Pvt. Ltd., Hyderabad, India. 09/2017 to 12/2018.
+  - Mainframes Engineer for L2 and L3 Support
+  - Enhanced and Optimized batch and on-line jobs. 

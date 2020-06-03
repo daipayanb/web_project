@@ -5,6 +5,7 @@ title = "Daipayan Banerjee"
 [params]
 author = "Daipayan Banerjee"
 profilePicture = "images/profile.png"
+themeColor = "#202020"
 
 customCss = ["css/blog.css"]
 customJs = ["js/blog.js"]
@@ -31,16 +32,16 @@ customJs = ["js/blog.js"]
   name = "About Me"
   identifier = "about"
   weight = 300
-  url = "/about/about_me.html"
+  url = "/about/about_me/"
 
   [[menu.main]]
   name = "Projects"
   identifier = "projects"
-  weight = 300
-  url = "/about/projects.html"
+  weight = 400
+  url = "/projects/projects/"
 
   [[menu.main]]
   name = "Contact"
   identifier = "contact"
-  weight = 300
-  url = "/about/contact.html"
+  weight = 900
+  url = "/contact/contact.html"
