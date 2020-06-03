@@ -1,2 +1,46 @@
 theme = "soho"
 baseURL = "https://quirky-raman-39a0fa.netlify.app/"
+title = "Daipayan Banerjee"
+
+[params]
+author = "Daipayan Banerjee"
+profilePicture = "images/profile.png"
+
+customCss = ["css/blog.css"]
+customJs = ["js/blog.js"]
+
+  ## Set as many as you want.
+  [[params.socialIcons]]
+  icon = "fa-linkedin"
+  title = "Linkedin"
+  url = "https://www.linkedin.com/in/daipayanbanerjee1995/"
+
+  [[params.socialIcons]]
+  icon = "fa-github"
+  title = "GitHub"
+  url = "https://github.com/daipayanb"
+
+[menu]
+  [[menu.main]]
+  name = "Posts"
+  weight = 100
+  identifier = "posts"
+  url = "/posts/"
+
+  [[menu.main]]
+  name = "About Me"
+  identifier = "about"
+  weight = 300
+  url = "/about/about_me.html"
+
+  [[menu.main]]
+  name = "Projects"
+  identifier = "projects"
+  weight = 300
+  url = "/about/projects.html"
+
+  [[menu.main]]
+  name = "Contact"
+  identifier = "contact"
+  weight = 300
+  url = "/about/contact.html"
