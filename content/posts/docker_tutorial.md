@@ -1,6 +1,6 @@
 ---
 title: "Docker Tutorial"
-date: 2020-06-09T13:44:54-04:00
+date: 2020-06-10T13:44:54-04:00
 ---
 
 # Short Tutorial on Docker
@@ -81,4 +81,69 @@ Here we are building upon a base Ubuntu Image. We want to run Nginx in this cont
 The difference between `CMD` and `ENTRYPOINT` can be confusing at times, but I'll try my best to explain. `ENTRYPOINT` defines the default command that should be executed with the starting of the container. For example for Ubuntu images by default it is `/bin/sh -c`. `CMD` defines commands that need to be executed once the container is up and running. Here is a great discussion on the differences between `CMD` and `ENTRYPOINT`.  
 [What is the difference between CMD and ENTRYPOINT in a Dockerfile?](https://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile) 
 
-***TO BE CONTINUED***
+### **Volumes**
+
+For persisting data in the containers a great way is to map a local directory to a directory in the container using the `-v <Host Directory>:<Container Directory>` flag. This can be marked as read-only adding the `:ro` parameter. `-v <Host Directory>:<Container Directory>:ro`  
+For sharing a volume with a new container which is already being used by another container, we simply add `--volumes-from <Container-name>`.  
+
+### **Networks**
+
+A network for the Containers to communicate with each other can be easily created using the `docker network create <network-name>` and can be added in the docker run command using the `--net=<network-name>`. The `docker network connect <container-name>` can be used to connect an existing container to the network.
+
+### **Docker-compose**
+
+It is rarely ever the case that our final application requires just one container to run. So to manage multiple different containers who each play a different role we need a program to manage them. This can be done manually, which will be quite tedious or using a file containing the necessary parameters required to run the containers. This is where Docker-compose comes in. It is a file which contains the necessary details for every container that we need.
+
+Here is an example `docker-compose.yml` file. This file is creating a Nginx Load Balancer, MySQL DB and Wordpress Container. There are 3 `replicas` of the WP container, the traffic to which will be controlled by the Nginx Proxy.
+
+```
+version: "3.3"
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx1-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    environment: 
+      DEFAULT_HOST: blog.DOMAIN.TLD
+  db:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    expose: 
+      - "3306"
+    env_file: 
+      - mysql-variables.env
+    container_name: mysql_db
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    expose:
+      - "80"
+    env_file: 
+      - wp-variables.env
+    deploy:
+      mode: replicated
+      replicas: 3
+
+volumes:
+    db_data: {}
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+```
+The command used to run this `docker-compose up -d --compatiility`
+
+Instead of using Docker hub images we can build our own images using `Docker-file` and `build: .`
+
+The `docker-compose.yml` consists of commands that we were already running but in a different from that requires less of human interaction. 
+
+***I'll be adding more topics to this document as I continue to explore Docker.***
+
