@@ -1,4 +1,5 @@
 ---
+title: "My Projects"
 date: 2020-06-03T13:44:54-04:00
 ---
 # My Projects

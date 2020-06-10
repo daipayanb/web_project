@@ -38,7 +38,7 @@ customJs = ["js/blog.js"]
   name = "Projects"
   identifier = "projects"
   weight = 400
-  url = "/projects/projects/"
+  url = "/projects/projects/" 
 
   [[menu.main]]
   name = "Contact"

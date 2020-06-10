@@ -25,4 +25,4 @@ You can email me using this form:
   <button type="submit">Send</button>
 </form>
 
-Thank you! 
+Thank you!
